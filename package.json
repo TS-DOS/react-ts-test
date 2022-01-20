@@ -3,16 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@types/react": "^16.8.2",
-    "@types/react-dom": "^16.8.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "@ionic/react": "^6.0.3",
+    "@ionic/react-router": "^6.0.3",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "nmp": "^1.0.3",
+    "npx": "^10.2.2",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "scripts": {
+      "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'"
+    }
   },
   "devDependencies": {
     "react-scripts-ts": "latest"
