@@ -1,44 +1,47 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import Home from './';
 
 
-interface AppProps { }
+interface AppProps {}
 interface AppState {
   name: string;
 }
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
+import React from 'react';
 
-class App extends Component<AppProps, AppState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'React'
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <ion-header translucent="true" collapse="fade">
-  <ion-toolbar>
-    <ion-title>Title</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content fullscreen="true">
-  ...
-</ion-content>
-
-<ion-footer translucent="true" collapse="fade">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-      </div>
-    );
-  }
-}
+const Home: React.FC = () => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Ionic Blank</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        The world is your oyster.
+        <p>
+          If you get lost, the{' '}
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://ionicframework.com/docs/"
+          >
+            docs
+          </a>{' '}
+          will be your guide.
+        </p>
+      </IonContent>
+    </IonPage>
+  );
+};
 
 render(<App />, document.getElementById('root'));
